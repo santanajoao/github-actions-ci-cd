@@ -1,4 +1,4 @@
 import './style.css';
-import { setupCounter } from './counter.js';
+import { setupCounter } from './scripts/counter.js';
 
 setupCounter(document.querySelector('#counter'));
