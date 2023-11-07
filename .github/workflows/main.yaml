@@ -1,13 +1,13 @@
-name: Node.js CI
+name: Production CI/CD
 
 on:
   pull_request:
     branches: [ "main" ]
 
 jobs:
-  deploy:
+  production-deploy:
     runs-on: ubuntu-latest
-    
+    environment: production
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
