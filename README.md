@@ -48,7 +48,3 @@ Para fazer o deploy autenticado, foi definido um secret do repositório que arma
 
 9. Crie um pull request para a branch main
 10. Automaticamente a action será executada e em caso de sucesso você poderá fazer o merge
-
-## Licença
-
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
