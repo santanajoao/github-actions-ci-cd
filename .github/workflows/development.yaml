@@ -20,8 +20,8 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: npx vercel --token="$VERCEL_TOKEN" -e NODE_ENV=$NODE_ENV --yes > deploy-url.txt
       - name: test
-        run: echo $DEPLOY_URL
+        run: echo $VERCEL_DEPLOY_URL
       - name: 'set custom deploy domain'
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: npx vercel --token="$VERCEL_TOKEN" alias $(cat 'deploy-url.txt') $DEPLOY_URL
+        run: npx vercel --token="$VERCEL_TOKEN" alias $(cat 'deploy-url.txt') $VERCEL_DEPLOY_URL
