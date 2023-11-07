@@ -36,7 +36,7 @@ Para fazer o deploy autenticado, foi definido um secret do repositório que arma
 
 ### Conectando com o GitHub
 
-5. Nas configurações do repositório > Secrets and Variables > Actions e crie uma secret com o nome VERCEL_TOKEN e adicione seu token
+5. Nas `Configurações do repositório > Secrets and Variables > Actions` e crie uma secret com o nome `VERCEL_TOKEN` e adicione seu token
 
 ### Acionando a action de desenvolvimento
 
