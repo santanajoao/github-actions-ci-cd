@@ -15,5 +15,13 @@ jobs:
           node-version: 18
       - run: npm install
       - run: npm run test
-      - run: npx vercel --token=${{VERCEL_TOKEN}} -e NODE_ENV=${{NODE_ENV}} > deploy-url.txt
-      - run: npx vercel --token=${{VERCEL_TOKEN}} alias $(cat 'deploy-url.txt') ${{DEPLOY_URL}}
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      - name: 'deploy to vercel'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel --token="$VERCEL_TOKEN" -e NODE_ENV=$NODE_ENV > deploy-url.txt
+      - name: 'set custom deploy domain'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel --token="$VERCEL_TOKEN" alias $(cat 'deploy-url.txt') $DEPLOY_URL
